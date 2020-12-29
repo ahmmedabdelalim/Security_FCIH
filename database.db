@@ -1,0 +1,38 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+// Create database
+$sql = "CREATE DATABASE security_project";
+if ($conn->query($sql) === TRUE) {
+  echo "Database created successfully";
+} else {
+  echo "Error creating database: " . $conn->error;
+}
+
+
+
+CREATE TABLE people (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(30) NOT NULL,
+password VARCHAR(30) NOT NULL,
+User_type VARCHAR(50)
+);
+CREATE TABLE subject_table (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+day VARCHAR(30) NOT NULL,
+date VARCHAR(30) NOT NULL,
+subject VARCHAR(50),
+doctor VARCHAR(50),
+hours VARCHAR(50),
+
+);
+?>
